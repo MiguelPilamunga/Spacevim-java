@@ -1,0 +1,31 @@
+ //descarga este archivo https://download.eclipse.org/jdtls/milestones/1.2.0/jdt-language-server-1.2.0-202106301459.tar.gz
+ //puedes decargar otras versiones AQUI https://download.eclipse.org/jdtls/milestones lo unico es que deberas saber la ubicacion de los aerchivos especificadps 
+ //en el caso de que descargues la configuracion sera la misas asegurate de crear  una carpeta lsp en tu usuario el mio e slabsoft  luego extrae los archivos en lsp ahora pega la configuracion 
+ //en init .toml puedes  aceder a ello abriendo vim space  y precionando  espacio + f +v+d luego pegar y cambiar labsoft por el nombre de tu usuario.
+ 
+ [[layers]]
+    name = "lang#java"
+ 
+ 
+ [[layers]]
+  name = "lsp"
+    filetypes = [
+        "java"
+        ]
+         [layers.override_cmd]
+           java = [
+                 "java",
+                 "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+                 "-Dosgi.bundles.defaultStartLevel=4",
+                 "-Declipse.product=org.eclipse.jdt.ls.core.product",
+                 "-Dlog.protocol=true",
+                 "-Dlog.level=NONE",
+                 "-noverify",
+                  "-Xmx1G",
+                 "-jar",
+                 "/home/labsoft/lsp/jdt-language-server-1.2.0-202106301459/plugins/org.eclipse.equinox.launcher_1.6.200.v20210416-202
+                 "-configuration",
+                 "/home/labsoft/lsp/jdt-language-server-1.2.0-202106301459/config_linux",
+                 "-data",
+                 "/home/labsoft/.cache/javalsp"
+ ]
